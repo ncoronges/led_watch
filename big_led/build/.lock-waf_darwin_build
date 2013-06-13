@@ -1,0 +1,8 @@
+argv = ['./waf', 'configure']
+environ = {'TERM_SESSION_ID': '9FDFD31E-5358-4D1F-8AEE-0D62F36ED140', 'SSH_AUTH_SOCK': '/tmp/launch-8w8nHc/Listeners', 'VERSIONER_PYTHON_PREFER_32_BIT': 'no', 'TERM_PROGRAM_VERSION': '309', 'SHELL': '/bin/bash', 'LOGNAME': 'ncoronges', 'USER': 'ncoronges', 'HOME': '/Users/ncoronges', 'ARM_GCC_PATH': '/Users/ncoronges/Projects/Pebble/arm-cs-tools/bin', 'PATH': '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/share/npm/bin:/Users/ncoronges/bin:/usr/local/share/npm/bin:/usr/local/sbin:/Users/ncoronges/Projects/Pebble/arm-cs-tools/bin', 'TMPDIR': '/var/folders/5l/_dq1mgpd4_b0kspwj4l8gtpwpd9pw6/T/', 'TERM_PROGRAM': 'Apple_Terminal', 'LANG': 'en_US.UTF-8', 'TERM': 'xterm-256color', 'Apple_PubSub_Socket_Render': '/tmp/launch-3Y4tVT/Render', 'VERSIONER_PYTHON_VERSION': '2.7', 'SHLVL': '1', 'OLDPWD': '/Users/ncoronges/Projects/led_watch', '__CF_USER_TEXT_ENCODING': '0x2CD4DB86:0:0', 'Apple_Ubiquity_Message': '/tmp/launch-KhC6yE/Apple_Ubiquity_Message', 'PWD': '/Users/ncoronges/Projects/led_watch/big_led', '_': './waf', 'PEBBLE_HOME': '/Users/ncoronges/Projects/Pebble/pebble/sdk', 'COMMAND_MODE': 'unix2003'}
+files = ['/Users/ncoronges/Projects/led_watch/big_led/wscript']
+hash = -2761727651458379904
+options = {'files': '', 'jobs': 4, 'verbose': 0, 'nocache': False, 'progress_bar': 0, 'timestamp': None, 'distcheck_args': None, 'top': '', 'destdir': '', 'keep': 0, 'zones': '', 'debug': False, 'prefix': '/usr/local/', 'download': False, 'force': False, 'targets': '', 'out': ''}
+out_dir = '/Users/ncoronges/Projects/led_watch/big_led/build'
+run_dir = '/Users/ncoronges/Projects/led_watch/big_led'
+top_dir = '/Users/ncoronges/Projects/led_watch/big_led'

@@ -1,0 +1,178 @@
+<html>
+<head>
+<script src="jquery-2.0.2.min.js"></script>
+<style>
+	body {
+		background-color: #000000; 
+		color: #FFFFFF;
+		font-family: Arial;
+	}
+	
+</style>
+</head>
+<body>
+
+<div id="canvas-container">
+</div>
+
+
+<div id="imagesrc-links" >
+	<h4> links </h4>
+</div>
+
+</body>
+<script>
+$(function() {
+
+	// left to right 4x5
+	var numbers = [
+
+		[1,1,1,1,
+		 1,0,0,1,
+		 1,0,0,1,
+		 1,0,0,1,
+		 1,1,1,1],
+
+		[0,1,1,0,
+		 0,0,1,0,
+		 0,0,1,0,
+		 0,0,1,0,
+		 0,1,1,1],
+
+		[1,1,1,1,
+		 0,0,0,1,
+		 1,1,1,1,
+		 1,0,0,0,
+		 1,1,1,1],
+
+		[1,1,1,1,
+		 0,0,0,1,
+		 1,1,1,1,
+		 0,0,0,1,
+		 1,1,1,1],
+
+		[1,0,0,1,
+		 1,0,0,1,
+		 1,1,1,1,
+		 0,0,0,1,
+		 0,0,0,1],
+
+		[1,1,1,1,
+		 1,0,0,0,
+		 1,1,1,1,
+		 0,0,0,1,
+		 1,1,1,1],
+
+		[1,1,1,1,
+		 1,0,0,0,
+		 1,1,1,1,
+		 1,0,0,1,
+		 1,1,1,1],
+
+		[1,1,1,1,
+		 0,0,0,1,
+		 0,0,0,1,
+		 0,0,1,0,
+		 0,0,1,0],
+
+		[1,1,1,1,
+		 1,0,0,1,
+		 1,1,1,1,
+		 1,0,0,1,
+		 1,1,1,1],
+
+		[1,1,1,1,
+		 1,0,0,1,
+		 1,1,1,1,
+		 0,0,0,1,
+		 0,0,0,1],
+	];
+	
+	for (var i = 0; i < 10; i++) {
+		
+		var num = numbers[i];
+			
+		$('#canvas-container').append('<canvas class="digit" width="72" height="84" id="canvas_num_'+i+'"/>');
+
+		var ctx = $('#canvas_num_'+i)[0].getContext("2d");
+
+		// draw background
+		ctx.fillStyle="#000000";
+		ctx.fillRect(0,0,72,84);
+		
+		var border = 10;
+		var row_width = 4;
+		var spacing = 16; 
+		var curr_row = 0;
+		var curr_col = 0;
+		var x = 0, y=0;
+		for (var j = 0; j < 20; j++) {
+			x = curr_col * spacing + border;
+			y = curr_row * spacing + border;
+
+			if (curr_col >= row_width-1) {
+				curr_row += 1;
+				curr_col = 0;
+			} else {
+				curr_col += 1;
+			}
+
+			ctx.fillStyle= (num[j]>0?"#FFFFFF":"#000000");
+			ctx.beginPath();
+			ctx.arc(x, y, 6, 0, Math.PI*2, true); 
+			ctx.closePath();
+			ctx.fill();
+		}
+
+		var img = $('#canvas_num_'+i)[0].toDataURL("image/png"); 
+		$('#imagesrc-links').append('<a href="'+img+'">image '+i+'</a><br>');
+
+	}
+	
+     // Handler for .ready() called.
+/*
+    var ctx = $('#canvas')[0].getContext("2d");
+	//draw a circle
+	ctx.fillStyle="#FFFFFF";
+	var border = 50;
+	var row_width = 100; 
+	var spacing = 30;
+	var curr_row = 0;
+	var curr_col = 0;
+	var x = 0; y = 0;
+	for (var i = 0; i < 500; i++) {
+		
+		
+
+		x= curr_col * spacing + border; 
+		y= curr_row * spacing + border;
+
+		if (curr_col >= row_width) {
+			curr_row += 1;
+			curr_col = 0;
+		} else {
+			curr_col += 1;
+		}
+
+		ctx.beginPath();
+		ctx.arc(x, y, 6, 0, Math.PI*2, true); 
+		ctx.closePath();
+		ctx.fill();
+	};
+
+
+	var img = $('#canvas')[0].toDataURL("image/png");
+	//var img    = document.getElementById('canvas').toDataURL("image/png");
+	//document.write('<img src="'+img+'">');
+	$('#imagesrc').append('<img src="'+img+'"/>');
+	//window.location = img;
+	console.log("done");
+
+	*/
+
+});
+
+
+
+</script>
+</html>
